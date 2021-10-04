@@ -56,9 +56,9 @@ public class Calculator {
 				break;
 				
 			case 3:
-				System.out.printf("You chose multiplication \n");
+				//System.out.printf("You chose multiplication \n");
 				product = multInt(integer_one, integer_two);
-				System.out.printf("Product: %d", product);
+				//System.out.printf("Product: %d", product);
 				break;
 				
 			case 4:
@@ -77,10 +77,19 @@ public class Calculator {
 		
 			
 		}
-		
+		if(choice == 1) {
 		System.out.printf("You chose adddition\n",sum =addInt(integer_one, integer_two ));
-		System.out.printf("Sum: %d",sum);
+		System.out.printf("The Sum of %d + %d : %d\n", integer_one, integer_two,sum);
 		
+		}
+		
+		else if( choice == 3) {
+			System.out.printf("You chose multiplication\n",product =multInt(integer_one, integer_two ));
+			
+			System.out.printf("%d x %d = %d \n" ,integer_one, integer_two, product);
+			
+		}
+			
 		userInput.close();
 		
 	
