@@ -10,10 +10,10 @@
 5. Display a default message (ex. "Invalid Entry, Try Again") if any number other than 1-5 is entered by the user
 
 */
-
 package theDeliverable;
 
 import java.util.Scanner;
+//import java.lang.*;
 public class Calculator {
 	public static void main(String[] args) {
 		
@@ -22,7 +22,7 @@ public class Calculator {
 		
 		System.out.printf("Enter following to perform the mathematical operations\n");
 		
-		System.out.println("1.)Addition\n2.)Subtraction\n3.)Multiply\n4.)Division\n6.)Exit\n");
+		System.out.println("1.)Addition\n2.)Subtraction\n3.)Multiply\n4.)Division\n5.)Exit\n");
 	
 		System.out.printf("Enter your choice\n");
 		
@@ -44,9 +44,9 @@ public class Calculator {
 		// sum, diff, product, remainder
 		switch (choice){
 			case 1:
-				System.out.printf("You chose adddition\n");
+				//System.out.printf("You chose adddition\n");
 				sum =addInt(integer_one, integer_two );
-				System.out.printf("Sum: %d",sum);
+				//System.out.printf("Sum: %d",sum);
 				break;
 				
 			case 2:
@@ -58,14 +58,30 @@ public class Calculator {
 			case 3:
 				System.out.printf("You chose multiplication \n");
 				product = multInt(integer_one, integer_two);
-				System.out.printf("Subtraction %d", product);
+				System.out.printf("Product: %d", product);
 				break;
 				
-			default: System.out.printf("Error");
+			case 4:
+				
+				System.out.printf("You chose Division");
+				remainder = divInt(integer_one, integer_two);
+				System.out.printf("%d / %d = %d", integer_one, integer_two, remainder);
+				break;
+			
+			case 5: 
+				System.exit(0);
+	
+				
+			default: System.out.printf("ERROR! INVALID TRY AGAIN");
 			
 		
 			
 		}
+		
+		System.out.printf("You chose adddition\n",sum =addInt(integer_one, integer_two ));
+		System.out.printf("Sum: %d",sum);
+		
+		userInput.close();
 		
 	
 	}
@@ -80,7 +96,7 @@ public class Calculator {
 		
 	}
 	
-	//this method is used for to find the product value ;
+	//this method is used for finding the difference 
 	
 	public static int diffInt(int a, int b) {
 		
@@ -89,12 +105,20 @@ public class Calculator {
 		return difference;
 		
 	}
-		
+	// this method is used for finding the product of two integers
 	public static int multInt(int a, int b) {
 		
 		int product = a * b ;
 		
 		return product;
+	}
+	
+	// this method is used for finding the remainder for two integers
+	public static int divInt(int a, int b) {
+		
+		int remainder = a / b ;
+		
+		return remainder;
 	}
 
 }
