@@ -19,10 +19,11 @@ public class Calculator {
 		
 		System.out.printf("Hello ,Jeff it is nice to see you\n"); //testing purposes using C's printf function
 		
+		
 		System.out.printf("Enter following to perform the mathematical operations\n");
 		
-		System.out.println("1.)Addition\n2.)Subtraction\n3.)Multiply\n4.)Division\n");
-		
+		System.out.println("1.)Addition\n2.)Subtraction\n3.)Multiply\n4.)Division\n6.)Exit\n");
+	
 		System.out.printf("Enter your choice\n");
 		
 		Scanner userInput = new Scanner(System.in);
@@ -39,10 +40,8 @@ public class Calculator {
 		
 		int integer_two = userInput.nextInt();
 		
-		
-
-		
 		// Instead of cascading if else statements practicing with the switch case for better readability and efficiency 
+		// sum, diff, product, remainder
 		switch (choice){
 			case 1:
 				System.out.printf("You chose adddition\n");
@@ -51,18 +50,24 @@ public class Calculator {
 				break;
 				
 			case 2:
-				System.out.printf("You chose multiplication\n");
+				System.out.printf("You chose subtraction \n");
+				difference = diffInt(integer_one, integer_two);
+				System.out.printf("Subtraction %d", difference);
 				break;
 				
+			case 3:
+				System.out.printf("You chose multiplication \n");
+				product = multInt(integer_one, integer_two);
+				System.out.printf("Subtraction %d", product);
+				break;
 				
 			default: System.out.printf("Error");
-				
-	
+			
+		
+			
 		}
 		
-		
-		
-		
+	
 	}
 	
 	//Will create the function(or method  because we are dealing with Java) to perform addition
@@ -72,8 +77,24 @@ public class Calculator {
 		int sum = a + b;
 		
 		return sum;
-	} 
+		
+	}
 	
+	//this method is used for to find the product value ;
 	
+	public static int diffInt(int a, int b) {
+		
+		int difference = a - b ;
+		
+		return difference;
+		
+	}
+		
+	public static int multInt(int a, int b) {
+		
+		int product = a * b ;
+		
+		return product;
+	}
 
 }
