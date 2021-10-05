@@ -40,6 +40,8 @@ public class Calculator {
 		
 		int integer_two = userInput.nextInt();
 		
+		userInput.close();
+		
 		// Instead of cascading if else statements practicing with the switch case for better readability and efficiency 
 		// sum, diff, product, remainder
 		switch (choice){
@@ -50,9 +52,9 @@ public class Calculator {
 				break;
 				
 			case 2:
-				System.out.printf("You chose subtraction \n");
+				//System.out.printf("You chose subtraction \n");
 				difference = diffInt(integer_one, integer_two);
-				System.out.printf("Subtraction %d", difference);
+				//System.out.printf("Subtraction %d", difference);
 				break;
 				
 			case 3:
@@ -63,16 +65,19 @@ public class Calculator {
 				
 			case 4:
 				
-				System.out.printf("You chose Division");
+				//System.out.printf("You chose Division");
 				remainder = divInt(integer_one, integer_two);
-				System.out.printf("%d / %d = %d", integer_one, integer_two, remainder);
+				//System.out.printf("%d / %d = %d", integer_one, integer_two, remainder);
 				break;
 			
 			case 5: 
 				System.exit(0);
+				break;
 	
 				
 			default: System.out.printf("ERROR! INVALID TRY AGAIN");
+				break;
+			
 			
 		
 			
@@ -83,14 +88,33 @@ public class Calculator {
 		
 		}
 		
+		else if( choice == 2) {
+			System.out.printf("You chose subtraction\n",difference =diffInt(integer_one, integer_two ));
+			
+			System.out.printf("%d - %d = %d\n" ,integer_one, integer_two, difference);
+			
+		}
+		
 		else if( choice == 3) {
 			System.out.printf("You chose multiplication\n",product =multInt(integer_one, integer_two ));
 			
-			System.out.printf("%d x %d = %d \n" ,integer_one, integer_two, product);
+			System.out.printf("%d x %d =" ,integer_one, integer_two, product);
 			
 		}
+		
+		else if( choice == 4) {
+			System.out.printf("You chose Division\n",remainder =divInt(integer_one, integer_two ));
+			System.out.printf("%d % %d =\n" ,integer_one, integer_two, remainder);
 			
-		userInput.close();
+			
+			
+			
+		}
+		
+		//else if();
+			
+	
+		
 		
 	
 	}
@@ -123,9 +147,9 @@ public class Calculator {
 	}
 	
 	// this method is used for finding the remainder for two integers
-	public static int divInt(int a, int b) {
+	public static int divInt(int num_one, int num_two) {
 		
-		int remainder = a / b ;
+		int remainder = num_one / num_two;
 		
 		return remainder;
 	}
